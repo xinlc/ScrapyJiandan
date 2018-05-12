@@ -7,5 +7,6 @@ jsconfig.json
 
 ./.idea
 
-./result
+result/
 *.pyc
+*.log
