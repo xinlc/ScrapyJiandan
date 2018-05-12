@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from selenium import webdriver
-from scrapyJiandan.items import MeizituItem
+from ScrapyJiandan.items import MeizituItem
 
 
 class MeizituSpider(scrapy.Spider):

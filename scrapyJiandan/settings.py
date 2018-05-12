@@ -9,10 +9,10 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'scrapyJiandan'
+BOT_NAME = 'ScrapyJiandan'
 
-SPIDER_MODULES = ['scrapyJiandan.spiders']
-NEWSPIDER_MODULE = 'scrapyJiandan.spiders'
+SPIDER_MODULES = ['ScrapyJiandan.spiders']
+NEWSPIDER_MODULE = 'ScrapyJiandan.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -70,7 +70,7 @@ DOWNLOAD_DELAY = 1
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
   #  'scrapyJiandan.pipelines.SomePipeline': 300,
-   'scrapyJiandan.pipelines.MeizituPipeline': 0,
+   'ScrapyJiandan.pipelines.MeizituPipeline': 0,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
