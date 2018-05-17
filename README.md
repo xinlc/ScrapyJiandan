@@ -21,7 +21,6 @@ $ scrapy crawl meizitu
 # Modify maxPage in spiders/meizituList/MeizituListSpider to control the number of pages.
 $ scrapy crawl meizituList 
 
-
 $ scrapy crawl news 
 ```
 
