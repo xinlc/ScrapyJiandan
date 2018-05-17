@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from ScrapyJiandan.items import MeizituItem
 
 
@@ -12,8 +13,16 @@ class MeizituSpider(scrapy.Spider):
     maxPage = 1
 
     def __init__(self):
-        self.driver = webdriver.PhantomJS()
-        # self.driver = webdriver.Firefox()
+
+        # [Download PhantomJS](http://phantomjs.org/download.html)
+        # self.driver = webdriver.PhantomJS(executable_path="/Users/leo/Documents/phantomjs-2.1.1-macosx/bin/phantomjs")
+        # Selenium support for PhantomJS has been deprecated, please use headless
+        # self.driver = webdriver.Chrome(executable_path="/Users/leo/Documents/chromedriver")
+
+        chrome_options = Options()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
+        self.driver = webdriver.Chrome(chrome_options=chrome_options)
         pass
         
     def parse(self, response):
