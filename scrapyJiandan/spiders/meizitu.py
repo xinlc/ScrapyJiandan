@@ -10,7 +10,6 @@ class MeizituSpider(scrapy.Spider):
     allowed_domains = ["jandan.net/ooxx"]
     start_urls = ['http://jandan.net/ooxx/']
     start_url_selenium = 'http://jandan.net/ooxx/'
-    maxPage = 1
 
     def __init__(self):
 
