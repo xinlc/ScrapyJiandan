@@ -48,3 +48,39 @@ class MeizituPipeline(object):
                 
                 handle.write(block)
         pass
+
+
+class NewsPipeline(object):
+    def process_item(self, item, spider):
+        if item.__class__.__name__ is 'NewsItem':
+
+            file_path = 'result/news/'
+
+            if not os.path.exists(file_path):
+                os.makedirs(file_path)
+
+            with open(file_path + str(datetime.datetime.now().strftime('%Y-%m-%d-%H')) + '.csv',
+                      'a') as f:
+
+                # plaintext = item['title'].encode('utf8') + ','\
+                #         + item['author'].encode('utf8') + ','\
+                #         + (item['tag'].encode('utf8') if 'tag' in item else 'N/A') + ','\
+                #         + (item['desc'].encode('utf8') if 'desc' in item else 'N/A') + ','\
+                #         + (item['times'].encode('utf8') if 'times' in item else 'N/A') + ','\
+                #         + (item['first_paragraph'].encode('utf8') if 'first_paragraph' in item else 'N/A') + ','\
+                #         + (item['detail_url'].encode('utf8') if 'detail_url' in item else 'N/A') + ','\
+                #         + '\n'
+
+                plaintext = item['title'] + ','\
+                        + item['author'] + ','\
+                        + (item['tag'] if 'tag' in item else 'N/A') + ','\
+                        + (item['desc'] if 'desc' in item else 'N/A') + ','\
+                        + (item['times'] if 'times' in item else 'N/A') + ','\
+                        + (item['first_paragraph'] if 'first_paragraph' in item else 'N/A') + ','\
+                        + (item['detail_url'] if 'detail_url' in item else 'N/A') + ','\
+                        + '\n'
+
+                f.write(plaintext)
+        return item
+
+

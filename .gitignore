@@ -5,7 +5,9 @@
 .vscode/
 jsconfig.json
 
+#IntelliJ
 .idea
+*.iml
 
 result/
 *.pyc

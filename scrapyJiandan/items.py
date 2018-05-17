@@ -16,3 +16,13 @@ class ScrapyjiandanItem(scrapy.Item):
 class MeizituItem(scrapy.Item):
     url = scrapy.Field()
     pass
+
+class NewsItem(scrapy.Item):
+    title = scrapy.Field()
+    author = scrapy.Field()
+    tag = scrapy.Field()
+    desc = scrapy.Field()
+    detail_url = scrapy.Field()
+    times = scrapy.Field()
+    first_paragraph = scrapy.Field()
+    pass

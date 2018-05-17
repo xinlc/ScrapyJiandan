@@ -71,6 +71,7 @@ DOWNLOAD_DELAY = 1
 ITEM_PIPELINES = {
   #  'scrapyJiandan.pipelines.SomePipeline': 300,
    'ScrapyJiandan.pipelines.MeizituPipeline': 0,
+   'ScrapyJiandan.pipelines.NewsPipeline': 1,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
