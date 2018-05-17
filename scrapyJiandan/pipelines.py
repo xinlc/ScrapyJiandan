@@ -23,10 +23,14 @@ class MeizituPipeline(object):
         return item
 
     def download_image(self, url, name):
-        if url == None or url == '':
+        if url is None or url == '':
             return None
 
         images_path = 'result/meizitu/'
+
+        if not os.path.exists(images_path):
+            os.makedirs(images_path)
+
         file_path = images_path + name
         file_name = name
 

@@ -33,17 +33,18 @@ class MeizituListSpider(scrapy.Spider):
 
             yield from self.parse_detail(item)
 
-            print ('===click loading==')
+            print('===click loading==')
             self.driver.execute_script('\
               document.querySelector("#comments > div:nth-child(6) > div > a.previous-comment-page")\
               &&document.querySelector("#comments > div:nth-child(6) > div > a.previous-comment-page").click()\
             ')
-            print ('==============================')
+            print('==============================')
         
             pageurl = self.driver.find_element_by_css_selector('#comments > div:nth-child(6) > div > a.previous-comment-page')
 
             print('next_page--%s' % pageurl.get_attribute('href'), i)
-            time.sleep(i*2)
+            # time.sleep(i*2)
+            time.sleep(3)
 
         self.driver.close()
         pass
@@ -54,12 +55,12 @@ class MeizituListSpider(scrapy.Spider):
             try:
                 img = li.find_element_by_css_selector('div > div > div.text > p > img')
 
-                if img == None:
+                if img is None:
                     continue
-                print ('=============')
+                print('=============')
                 src = img.get_attribute('src')
-                print (src)
-                print ('=============')
+                print(src)
+                print('=============')
                 item['url'] = src
                 yield item
             except:

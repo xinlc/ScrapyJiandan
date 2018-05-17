@@ -16,6 +16,10 @@ $ pip3 install -r requirements.txt
 
 ```bash
 $ scrapy crawl meizitu
+
+# Support multiple pages.
+# Modify maxPage in spiders/meizituList/MeizituListSpider to control the number of pages.
+$ scrapy crawl meizituList 
 ```
 
 ## Documents

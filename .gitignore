@@ -5,7 +5,7 @@
 .vscode/
 jsconfig.json
 
-.idea/
+.idea
 
 result/
 *.pyc
