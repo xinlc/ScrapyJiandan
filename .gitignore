@@ -6,9 +6,12 @@
 jsconfig.json
 
 #IntelliJ
-.idea
+.idea/
 *.iml
 
 result/
+
 *.pyc
+
+# Log Files
 *.log
